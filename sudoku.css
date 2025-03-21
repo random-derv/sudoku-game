@@ -1,85 +1,164 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-top: 20px;
+    font-size: 36px;
 }
 
 hr {
     width: 500px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    margin: 20px auto;
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-around;
+    width: 450px;
+    margin: 0 auto 20px;
+}
+
+#errors,
+#timer {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #errors {
-    color: chocolate;
+    color: white;
+    background-color: #e74c3c;
+}
+
+#timer {
+    color: white;
+    background-color: #3498db;
 }
 
 #board {
     width: 450px;
     height: 450px;
-
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
 }
+
 .tile {
     width: 48px;
     height: 48px;
-    border: 1px solid lightblue;
-    border-radius: 5%;
-
+    border: 1px solid #ccc;
+    border-radius: 0;
     font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tile:hover {
+    background-color: #f0f0f0;
 }
 
 #digits {
     width: 450px;
-    height: 50px;
-
-    background-color: aqua;
-    margin: 0 auto;
+    height: 60px;
+    background-color: #2c3e50;
+    margin: 20px auto;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .number {
     width: 44px;
     height: 44px;
-    border: 1px solid black;
-    margin: 2px;
-    border-radius: 10%;
-
-
+    border: 1px solid #34495e;
+    margin: 7px 4px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #2c3e50;
     font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.number:hover {
+    background-color: #ecf0f1;
+    transform: translateY(-2px);
 }
 
 .number-selected {
-    background-color: greenyellow;
+    background-color: #2ecc71;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(46, 204, 113, 0.4);
 }
 
 .tile-start {
-    background-color: lightblue;
+    background-color: #ecf0f1;
+    cursor: not-allowed;
 }
 
 .horizontal-line {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #2c3e50;
 }
 
 .vertical-line {
-    border-right: 1px solid black;
+    border-right: 2px solid #2c3e50;
 }
 
 footer {
-    line-height: 0%;
-    color: blue;
+    color: #7f8c8d;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    padding: 15px;
+    margin-top: 30px;
     width: 100%;
     font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.game-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.new-game-btn {
+    display: block;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    margin: 20px auto;
+}
+
+.new-game-btn:hover {
+    transform: scale(1.05);
+    background-color: #34495e;
 }
